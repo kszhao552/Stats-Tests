@@ -30,9 +30,9 @@ public class OneSampleZProportions implements ZScore{
 		return sd;
 	}
 
-	public int prob(int score) {
-		// TODO Auto-generated method stub
-		return 0;
+	public double prob(double score) {
+		// normalCdf(x) = 1/2 + 1/2 * erf(x / sqrt(2))
+		return .5 + .5* Erf.erf(score/Math.sqrt(2));
 	}
 
 	public boolean normality() {
