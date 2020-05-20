@@ -14,7 +14,7 @@ public interface ZScore {
 	/*
 	 * Calculates the Standard Deviation for the given sample.
 	 */
-	int prob(int score);
+	double prob(double score);
 	/*
 	 * converts the z-score into probability of happening. 
 	 */
