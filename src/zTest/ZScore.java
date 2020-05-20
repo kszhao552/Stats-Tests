@@ -18,4 +18,10 @@ public interface ZScore {
 	/*
 	 * converts the z-score into probability of happening. 
 	 */
+	
+	public double getZScore();
+	public double getsd();
+	public double getTestStat();
+	public double getHypothesis();
+	public int getSize();
 }

@@ -54,4 +54,29 @@ public class OneSampleZProportions implements ZScore{
 		return successes && failures;
 	}
 
+	@Override
+	public double getZScore() {
+		return zScore;
+	}
+
+	@Override
+	public double getsd() {
+		return sd;
+	}
+
+	@Override
+	public double getTestStat() {
+		return phat;
+	}
+
+	@Override
+	public double getHypothesis() {
+		return p;
+	}
+
+	@Override
+	public int getSize() {
+		return size;
+	}
+
 }
