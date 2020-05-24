@@ -24,4 +24,7 @@ public interface ZScore {
 	public double getTestStat();
 	public double getHypothesis();
 	public int getSize();
+	/*
+	 * Access methods in order to retrieve encapsulated variables.
+	 */
 }
