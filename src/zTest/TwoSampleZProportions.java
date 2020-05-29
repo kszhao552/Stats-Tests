@@ -10,6 +10,7 @@ public class TwoSampleZProportions implements ZScore{
 	private double phat1;
 	private double phat2;
 	private double p;
+	
 	private int size1;
 	private int size2;
 	private int size;
@@ -80,7 +81,7 @@ public class TwoSampleZProportions implements ZScore{
 
 	@Override
 	public double getHypothesis() {
-		return p;
+		return 0;
 	}
 
 	@Override
