@@ -79,4 +79,8 @@ public class OneSampleZProportions implements ZScore{
 		return size;
 	}
 
+	public boolean getNormality()
+	{
+		return normal;
+	}
 }
