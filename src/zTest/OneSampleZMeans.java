@@ -20,7 +20,7 @@ public class OneSampleZMeans implements ZScore{
 	}
 	
 	public double score() {
-		double z = (xbar-mu)/(sd/Math.sqrt(size));
+		double z = (xbar-mu)/sd();
 		return z;
 	}
 
