@@ -63,5 +63,9 @@ public class OneSampleZMeans implements ZScore{
 	public int getSize() {
 		return size;
 	}
-
+	
+	public boolean getNormality()
+	{
+		return normal;
+	}
 }
