@@ -7,8 +7,15 @@ public class ZTest
 		System.out.println("Please input an option:\n(1) One Sample with Proportions\n(2) One Sample with Means"
 				+ "\n(3) Two Sample with Proportions\n(4) Two Sample with Means\nThe tests with means will assume a standard deviation of the population");
 		Scanner input = new Scanner(System.in);
-		
-		int option = input.nextInt();
+		int option;
+		do {
+		option = input.nextInt();
+			if (option <=0||option >=5) {
+				System.out.println("Input is invalid, please try again");
+			}
+		}while (option <=0|| option>=5);
+
+		//initialize the variables outside switch statement to be able to refer to the object outside of it with the same name
 		ZScore test;
 		double testValue1 = 0;
 		double testValue2 =0;
@@ -65,7 +72,24 @@ public class ZTest
 			sd1 = input.nextDouble();
 			System.out.println("Standard Deviation of Second Group?");
 			test = new TwoSampleZMeans(testValue1, testValue2, size1, size2, sd1, sd2);
+			break;
+		default:
+			test = new OneSampleZProportions(0,0,0);
 		}
+		
+		//checks the normality of the sampling distribution
+		if (test.getNormality()) {
+			System.out.println("Sampling Distribution is approximately normal");
+		}else {
+			System.out.println("Sampling Distribution is not approximately normal, use cation when interpretting results");
+		}
+		
+		//results of the test
+		System.out.println("The sample standard deviation used in calculations is " + test.sd());
+		double score = test.score();
+		System.out.println("The z-score calculated is " + score);
+		System.out.println("The probability of a score this extreme or lower occuring is " + test.prob(score));
+		System.out.println("The probability of a score this extreme or higher occuring is " + (1-test.prob(score)));
 		
 	}
 }
