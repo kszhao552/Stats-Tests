@@ -1,0 +1,71 @@
+package zTest;
+import java.util.Scanner;
+
+public class ZTest 
+{
+	public static void main(String[] args) {
+		System.out.println("Please input an option:\n(1) One Sample with Proportions\n(2) One Sample with Means"
+				+ "\n(3) Two Sample with Proportions\n(4) Two Sample with Means\nThe tests with means will assume a standard deviation of the population");
+		Scanner input = new Scanner(System.in);
+		
+		int option = input.nextInt();
+		ZScore test;
+		double testValue1 = 0;
+		double testValue2 =0;
+		double hypValue =0;
+		int size1 =0;
+		int size2 =0;
+		double sd1 =0;
+		double sd2 =0;
+		
+		//The switch statement will take the user input and take the current test object and create a new one that fits the specifications.
+		switch(option) {
+		case 1:
+			System.out.println("Test Value?");
+			testValue1 = input.nextDouble();
+			System.out.println("Hypothesis Value?");
+			hypValue = input.nextDouble();
+			System.out.println("Sample Size?");
+			size1 = input.nextInt();
+
+			test = new OneSampleZProportions(testValue1, hypValue, size1);
+			break;
+		case 2:
+			System.out.println("Test Value?");
+			testValue1 = input.nextDouble();
+			System.out.println("Hypothesis Value?");
+			hypValue = input.nextDouble();
+			System.out.println("Sample Size?");
+			size1 = input.nextInt();
+			System.out.println("Standard Deviation?");
+			sd1 = input.nextDouble();
+			test = new OneSampleZMeans(testValue1, hypValue, size1, sd1);
+			break;
+		case 3:
+			System.out.println("First Test Value?");
+			testValue1 = input.nextDouble();
+			System.out.println("Second Test Value?");
+			testValue2 = input.nextDouble();
+			System.out.println("Sample Size of First Group?");
+			size1 = input.nextInt();
+			System.out.println("Sample Size of Second Group?");
+			size2 = input.nextInt();
+			test = new TwoSampleZProportions(testValue1, testValue2, size1, size2);
+			break;
+		case 4: 
+			System.out.println("First Test Value?");
+			testValue1 = input.nextDouble();
+			System.out.println("Second Test Value?");
+			testValue2 = input.nextDouble();
+			System.out.println("Sample Size of First Group?");
+			size1 = input.nextInt();
+			System.out.println("Sample Size of Second Group?");
+			size2 = input.nextInt();
+			System.out.println("Standard Deviation of First Group?");
+			sd1 = input.nextDouble();
+			System.out.println("Standard Deviation of Second Group?");
+			test = new TwoSampleZMeans(testValue1, testValue2, size1, size2, sd1, sd2);
+		}
+		
+	}
+}
