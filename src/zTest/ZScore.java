@@ -19,11 +19,11 @@ public interface ZScore {
 	 * converts the z-score into probability of happening. 
 	 */
 	
-	public double getZScore();
-	public double getsd();
-	public double getTestStat();
-	public double getHypothesis();
-	public int getSize();
+	public double getZScore(); //
+	public double getsd();	//
+	public double getTestStat(); //
+	public double getHypothesis(); //
+	public int getSize(); //
 	public boolean getNormality();
 	/*
 	 * Access methods in order to retrieve encapsulated variables.
