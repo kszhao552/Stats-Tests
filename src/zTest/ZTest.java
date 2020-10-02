@@ -1,9 +1,10 @@
 package zTest;
 import java.util.Scanner;
-
+import javax.swing.*;
 public class ZTest 
 {
 	public static void main(String[] args) {
+		JFrame frame = new JFrame ("simple GUI");
 		System.out.println("Please input an option:\n(1) One Sample with Proportions\n(2) One Sample with Means"
 				+ "\n(3) Two Sample with Proportions\n(4) Two Sample with Means\nThe tests with means will assume a standard deviation of the population");
 		Scanner input = new Scanner(System.in);
@@ -57,6 +58,10 @@ public class ZTest
 			size1 = input.nextInt();
 			System.out.println("Sample Size of Second Group?");
 			size2 = input.nextInt();
+			System.out.println("Standard Deviation of First Group?");
+			sd1 = input.nextDouble();
+			System.out.println("Standard Deviation of Second Group?");
+			sd2 = input.nextDouble();
 			test = new TwoSampleZProportions(testValue1, testValue2, size1, size2);
 			break;
 		case 4: 
@@ -71,6 +76,7 @@ public class ZTest
 			System.out.println("Standard Deviation of First Group?");
 			sd1 = input.nextDouble();
 			System.out.println("Standard Deviation of Second Group?");
+			sd2 = input.nextDouble();
 			test = new TwoSampleZMeans(testValue1, testValue2, size1, size2, sd1, sd2);
 			break;
 		default:
